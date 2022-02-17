@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -19,10 +21,15 @@
             <button>Add</button>
         </form>
         
-        <form action="action">
-            <p>
-                <input type="radio" name="item" id="item">apples
+        <form action="ShoppingList" method="post">
+            <input type="hidden" name="action" value="delete">
+            <c:forEach items="${list}" var="list">
+                <p>
+                    <input type="radio" name="list" value="<c:out value="${list}" />">
+                    ${list}
             </p>
+            </c:forEach>
+            
             
             <button type="submit">Delete</button>
         </form>
