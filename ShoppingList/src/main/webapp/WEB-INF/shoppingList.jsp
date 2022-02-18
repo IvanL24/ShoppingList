@@ -9,24 +9,24 @@
     </head>
     <body>
         <h1>Shopping List</h1>
-        <p>Hello, ${username} <a href="">Logout</a></p>
+        <p>Hello, ${username} <a href="ShoppingList?logout">Logout</a></p>
         
         <h2>List</h2>
 
         <form action="ShoppingList" method="post">
             <input type="hidden" name="action" value="add">
-            <label>Add item: </label>
-            <input type="text" name="list" id="list">
+            <label for="item">Item: </label>
+            <input type="text" name="item" id="item" required>
             
-            <button>Add</button>
+            <button type="submit">Add</button>
         </form>
         
         <form action="ShoppingList" method="post">
             <input type="hidden" name="action" value="delete">
-            <c:forEach items="${list}" var="list">
+            <c:forEach items="${items}" var="item">
                 <p>
-                    <input type="radio" name="list" value="<c:out value="${list}" />">
-                    ${list}
+                    <input type="radio" name="item" value="<c:out value="${item}" />">
+                    ${item}
             </p>
             </c:forEach>
             

@@ -9,8 +9,8 @@
         <h1>Shopping List</h1>
         <form action="ShoppingList" method="post">
             <label for="username">Username: </label>
-            <input type="text" name="username" id="username">
-            <button>Register name</button>
+            <input type="text" name="username" id="username" required>
+            <button type="submit">Register name</button>
         </form>
     </body>
 </html>
